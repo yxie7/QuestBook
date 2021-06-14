@@ -138,8 +138,9 @@ class MainActivity : AppCompatActivity() {
         val parallaxLayout = findViewById<CollapsingToolbarLayout>(R.id.collapsingToolbar)
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
-        toolbar.setupWithNavController(navController,drawerLayout)
-
+        actionBar?.setDisplayHomeAsUpEnabled(false)
+        actionBar?.setDisplayShowHomeEnabled(false)
+        parallaxLayout.setupWithNavController(toolbar,navController,drawerLayout)
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }
