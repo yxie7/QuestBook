@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/page_dark"
     android:fitsSystemWindows="true"
     tools:context=".ui.MainActivity">
 
@@ -35,7 +34,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
 
-                android:background="@color/page_dark"
                 android:contentDescription="@string/title_image"
                 android:scaleType="centerCrop"
                 android:src="@drawable/seerlight_hi" />
@@ -45,10 +43,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:elevation="4dp"
-                app:layout_collapseMode="pin"
-                app:contentInsetStartWithNavigation="0dp"
                 app:contentInsetEnd="64dp"
-                />
+                app:contentInsetStartWithNavigation="0dp"
+                app:layout_collapseMode="pin" />
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
@@ -59,6 +56,7 @@
         android:layout_height="match_parent"
 
         android:fillViewport="true"
+        android:padding="0dp"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
         <include
@@ -66,14 +64,55 @@
             layout="@layout/content_main" />
     </androidx.core.widget.NestedScrollView>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="16dp"
-        android:contentDescription="@string/post_quest"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clFabM"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-        android:src="@drawable/ic_add_white_24dp"
-        android:theme="@style/Theme.QuestBook" />
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+
+            android:layout_marginBottom="16dp"
+            android:contentDescription="@string/post_quest"
+            android:src="@drawable/ic_add_white_24dp"
+            android:theme="@style/Theme.QuestBook"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/fabNewDaily"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="@color/red_highlight"
+            android:clickable="true"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            android:text="New Daily"
+            android:textAlignment="center"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/fab"
+            app:layout_constraintEnd_toEndOf="@id/fab" />
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/fabNewWeekly"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="@color/red_highlight"
+            android:clickable="true"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            android:text="New Weekly"
+            android:textAlignment="center"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/fabNewDaily"
+            app:layout_constraintEnd_toEndOf="@id/fabNewDaily" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

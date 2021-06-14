@@ -10,7 +10,6 @@ import android.view.View
 import android.view.ViewGroup
 import com.neoahdev.questbook.dummy.DummyContent
 import com.neoahdev.questbook.util.Pages
-import kotlinx.android.synthetic.main.app_bar_main.*
 
 /**
  * A fragment representing a list of Items.
