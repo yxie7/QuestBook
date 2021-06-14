@@ -1,0 +1,50 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.QuestBook" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/royal_red</item>
+        <item name="colorPrimaryVariant">@color/royal_red</item>
+        <item name="colorOnPrimary">@color/page_lightest</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/royal_red</item>
+        <item name="colorSecondaryVariant">@color/page_lighter</item>
+        <item name="colorOnSecondary">@color/page_lightest</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+        <item name="colorAccent">@color/royal_red</item>
+        <item name="actionModeStyle">@style/SelectActionModeStyle</item>
+        <item name="actionModeCloseDrawable">@drawable/baseline_arrow_back_white_24</item>
+        <item name="windowActionModeOverlay">true</item>
+        <item name="actionMenuTextColor">@color/page_lightest</item>
+        <item name="drawerArrowStyle">@style/QuestBookDrawer</item>
+
+        <item name="android:textColor">@color/page_lightest</item>
+    </style>
+
+    <style name="Theme.QuestBook.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.QuestBook.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.QuestBook.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <!-- -->
+    <style name="SelectActionModeStyle" parent="@style/Widget.AppCompat.ActionMode">
+        <item name="actionMenuTextColor">@color/page_lightest</item>
+        <item name="background">@color/royal_red</item>
+        <item name="backgroundSplit">?attr/actionModeSplitBackground</item>
+        <item name="height">?attr/actionBarSize</item>
+        <item name="titleTextStyle">@style/TextAppearance.AppCompat.Widget.ActionMode.Title</item>
+        <item name="subtitleTextStyle">@style/TextAppearance.AppCompat.Widget.ActionMode.Subtitle</item>
+        <item name="closeItemLayout">@layout/abc_action_mode_close_item_material</item>
+    </style>
+
+    <style name="QuestBookDrawer" parent="@style/Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+        <item name="color">@color/page_lightest</item>
+    </style>
+
+</resources>

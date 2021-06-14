@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">QuestBook</string>
+
+    <!-- Menu Strings -->
+    <string name="drawer_today">Today\'s Quests</string>
+    <string name="drawer_daily">Daily Quests</string>
+    <string name="drawer_weekly">Weekly Quests</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- Others -->
+    <string name="post_quest">Post New Quest</string>
+    <string name="quest_book_logo">QuestBook Logo</string>
+    <string name="quest_book">Quest Book</string>
+    <string name="title_image">Title Image</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>
