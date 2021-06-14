@@ -12,6 +12,7 @@
     <color name="page_light">#ECDAB5</color>
     <color name="page_dark">#DAC49F</color>
     <color name="royal_red">#770000</color>
+    <color name="red_highlight">#C40000</color>
     <color name="solid_background">#7E5D35</color>
 
     <!-- Quest Book Colors -->

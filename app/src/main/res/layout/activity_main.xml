@@ -5,23 +5,23 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.MainActivity"
+    android:background="@color/page_dark"
     android:fitsSystemWindows="true"
     tools:openDrawer="start">
 
 
-<include
+    <include
         android:id="@+id/container"
         layout="@layout/app_bar_main"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent" />
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_drawer"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:background="@color/page_light"
         android:layout_gravity="start"
+        android:background="@color/page_light"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/menu_drawer_header"
         app:menu="@menu/menu_drawer" />
