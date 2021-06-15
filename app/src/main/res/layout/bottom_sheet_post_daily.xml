@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/round_header"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="New Daily Quest"
+            android:textColor="@color/page_lightest"
+            android:textSize="36sp" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/inputQuestName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/royal_red"
+        android:ems="10"
+        android:hint="Quest Name"
+        android:imeOptions="actionDone"
+        android:textCursorDrawable="@drawable/royal_red_cursor"
+        android:inputType="text"
+        android:singleLine="true"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/inputQuestDescription"
+        app:layout_constraintStart_toStartOf="@+id/inputQuestDescription"
+        app:layout_constraintTop_toBottomOf="@+id/header" />
+
+    <EditText
+        android:id="@+id/inputQuestDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/royal_red"
+        android:ems="10"
+        android:gravity="start|top"
+        android:textCursorDrawable="@drawable/royal_red_cursor"
+
+        android:hint="Description (Optional)"
+        android:imeOptions="actionDone"
+        android:inputType="text"
+        android:singleLine="true"
+
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputQuestName" />
+
+    <EditText
+        android:id="@+id/inputQuestTime"
+        android:layout_width="64dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:backgroundTint="@color/royal_red"
+        android:ems="10"
+        android:hint="0"
+        android:inputType="number"
+        android:maxLines="1"
+        android:textCursorDrawable="@drawable/royal_red_cursor"
+
+        android:singleLine="true"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/txtEstimatedTime"
+        app:layout_constraintEnd_toEndOf="@+id/inputQuestDescription"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/txtEstimatedTime"
+        app:layout_constraintTop_toTopOf="@+id/txtEstimatedTime"
+        app:layout_constraintVertical_bias="0.38" />
+
+    <TextView
+        android:id="@+id/txtEstimatedTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Estimated Time Required (Minutes)"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/inputQuestDescription"
+        app:layout_constraintTop_toBottomOf="@+id/inputQuestDescription" />
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        android:clickable="true"
+        android:gravity="center"
+        android:paddingStart="32dp"
+        android:paddingEnd="32dp"
+        android:text="Post Quest"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputQuestTime" />
+</androidx.constraintlayout.widget.ConstraintLayout>

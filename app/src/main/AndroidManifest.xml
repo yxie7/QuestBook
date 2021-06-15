@@ -12,7 +12,9 @@
         <activity
             android:name=".ui.MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/Theme.QuestBook.NoActionBar">
+            android:theme="@style/Theme.QuestBook.NoActionBar"
+            android:windowSoftInputMode="adjustResize|stateAlwaysHidden">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -10,4 +10,5 @@
     android:layout_marginRight="16dp"
     app:layoutManager="LinearLayoutManager"
     tools:context=".ItemDummyFragment"
-    tools:listitem="@layout/fragment_item_dummy" />
+    tools:listitem="@layout/fragment_item_dummy"
+    android:theme="@style/QuestPage"/>

@@ -1,13 +1,13 @@
 package com.neoahdev.questbook.ui
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
@@ -16,6 +16,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.appbar.CollapsingToolbarLayout
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.navigation.NavigationView
 import com.neoahdev.questbook.R
 import com.neoahdev.questbook.model.DailyQuest
@@ -24,12 +25,13 @@ import com.neoahdev.questbook.model.WeeklyQuest
 import com.neoahdev.questbook.util.FileManager
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
+import kotlinx.android.synthetic.main.bottom_sheet_post_daily.*
+
 
 class MainActivity : AppCompatActivity() {
     // this allows these objects to be used outside of this class
     companion object {
-        var questLists: QuestLists =
-            QuestLists(mutableListOf<DailyQuest>(), mutableListOf<WeeklyQuest>())
+        var questLists: QuestLists = QuestLists(mutableListOf<DailyQuest>(), mutableListOf<WeeklyQuest>())
         lateinit var fileManager: FileManager
         lateinit var appBarConfiguration: AppBarConfiguration
     }
@@ -86,11 +88,26 @@ class MainActivity : AppCompatActivity() {
                 .setAction("Action", null).show()*/
         }
         fabNewDaily.setOnClickListener {
-            Toast.makeText(this, "new daily", Toast.LENGTH_SHORT).show()
+            newDailyClick()
         }
         fabNewWeekly.setOnClickListener {
             Toast.makeText(this, "new weekly", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    fun newDailyClick() {
+        BottomSheetDailyFragment().apply {
+            show(supportFragmentManager, BottomSheetDailyFragment.TAG)
+        }
+        onFabClicked()
+        /*
+            var bsd: BottomSheetDialog = BottomSheetDialog(this)
+            bsd.setContentView(R.layout.bottom_sheet_post_daily)
+            var questName = bsd.inputQuestName
+            var questDescription = bsd.inputQuestDescription
+            var questTime = bsd.inputQuestTime
+
+            bsd.show()*/
     }
 
     fun onFabClicked() {
@@ -122,25 +139,20 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun setupActionBarAndDrawer() {
-        val navHostFragment =
-            supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         val navController = navHostFragment.navController
         val drawerLayout: DrawerLayout = drawer_layout
-        appBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.nav_home, R.id.nav_daily, R.id.nav_weekly
-            ), drawerLayout
-        )
+        appBarConfiguration = AppBarConfiguration(setOf(R.id.nav_home, R.id.nav_daily, R.id.nav_weekly), drawerLayout)
         val navView: NavigationView = findViewById(R.id.nav_drawer)
 
-        appBarConfiguration = AppBarConfiguration(navController.graph,drawerLayout)
+        appBarConfiguration = AppBarConfiguration(navController.graph, drawerLayout)
 
         val parallaxLayout = findViewById<CollapsingToolbarLayout>(R.id.collapsingToolbar)
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
         actionBar?.setDisplayHomeAsUpEnabled(false)
         actionBar?.setDisplayShowHomeEnabled(false)
-        parallaxLayout.setupWithNavController(toolbar,navController,drawerLayout)
+        parallaxLayout.setupWithNavController(toolbar, navController, drawerLayout)
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }

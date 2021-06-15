@@ -47,4 +47,13 @@
         <item name="color">@color/page_lightest</item>
     </style>
 
+    <style name="QuestBookTheme">
+        <item name="android:textColor">@color/page_lightest</item>
+        <item name="android:background">@color/royal_red</item>
+    </style>
+    <style name="QuestPage">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:background">@color/page_dark</item>
+    </style>
+
 </resources>
