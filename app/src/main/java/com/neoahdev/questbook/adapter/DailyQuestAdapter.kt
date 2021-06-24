@@ -8,7 +8,6 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.neoahdev.questbook.R
-
 import com.neoahdev.questbook.dummy.DummyContent.DummyItem
 import com.neoahdev.questbook.model.DailyQuest
 import kotlinx.android.synthetic.main.quest_item.view.*
@@ -44,13 +43,14 @@ class DailyQuestAdapter(
         val card: CardView = itemView.mcv
         val cardCL: ConstraintLayout = itemView.cl
         var txtQuestName: TextView = itemView.txtQuestName
+
         //expand/collapse
         val details: View = itemView.clQuestMain
         val txtDescription: TextView = itemView.txtDescription
         val txtEstimatedTime: TextView = itemView.txtEstimatedTime
 
-        fun bind(position: Int){
-            val quest:DailyQuest = questList[position]
+        fun bind(position: Int) {
+            val quest: DailyQuest = questList[position]
 
             var completed = quest.completed
             txtQuestName.text = quest.name

@@ -24,7 +24,7 @@ class BottomSheetDailyFragment : BottomSheetDialogFragment() {
         const val TAG = "CustomBottomSheetDialogFragment"
     }
 
-    private lateinit var dailyRefreshInterface:DailyRefreshInterface
+    private lateinit var dailyRefreshInterface: DailyRefreshInterface
 
 
     override fun onCreateView(
@@ -53,7 +53,6 @@ class BottomSheetDailyFragment : BottomSheetDialogFragment() {
                 var newQuest = DailyQuest(questName, questDescription, questTime)
                 postNewDailyQuest(newQuest)
                 dailyRefreshInterface.refreshDailyQuestList()
-
                 dismiss()
             } else {
                 Toast.makeText(

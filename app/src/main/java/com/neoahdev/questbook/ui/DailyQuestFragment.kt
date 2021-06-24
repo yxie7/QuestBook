@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.neoahdev.questbook.R
 import com.neoahdev.questbook.adapter.DailyQuestAdapter
 import com.neoahdev.questbook.util.FileManager
-import kotlinx.android.synthetic.main.fragment_daily_list.*
 
 /**
  * A fragment representing a list of Items.
@@ -42,14 +41,14 @@ class DailyQuestFragment : Fragment() {
                     columnCount <= 1 -> LinearLayoutManager(context)
                     else -> GridLayoutManager(context, columnCount)
                 }
-                mAdapter= DailyQuestAdapter(dailyQuestList)
+                mAdapter = DailyQuestAdapter(dailyQuestList)
                 adapter = mAdapter
             }
         }
         return view
     }
 
-     fun refreshDailyQuestList(){
+    fun refreshDailyQuestList() {
         mAdapter.notifyDataSetChanged()
     }
 

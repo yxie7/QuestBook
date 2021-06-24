@@ -86,9 +86,6 @@ class MainActivity : AppCompatActivity(), BottomSheetDailyFragment.DailyRefreshI
         fab.setOnClickListener { view ->
             onFabClicked()
             Toast.makeText(this, "post", Toast.LENGTH_SHORT).show()
-            /*
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()*/
         }
         fabNewDaily.setOnClickListener {
             newDailyClick()
@@ -97,13 +94,6 @@ class MainActivity : AppCompatActivity(), BottomSheetDailyFragment.DailyRefreshI
         fabNewWeekly.setOnClickListener {
             Toast.makeText(this, "new weekly", Toast.LENGTH_SHORT).show()
         }
-
-        /*
-        // Hide FAB only while scrolling, shows when stopped
-        nsv.setOnScrollChangeListener(NestedScrollView.OnScrollChangeListener() { v: NestedScrollView, scrollX: Int, scrollY: Int, oldScrollX: Int, oldScrollY: Int ->
-            if(scrollY > oldScrollY) fab.hide()
-            else fab.show()
-        })*/
     }
 
     fun newDailyClick() {
@@ -172,12 +162,7 @@ class MainActivity : AppCompatActivity(), BottomSheetDailyFragment.DailyRefreshI
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment)
         val childFragmentManager = navHostFragment?.childFragmentManager
         var lf = childFragmentManager?.fragments
-        if (lf != null) {
-            for (frag in lf) {
-                Log.d("z",frag.toString())
-            }
-        }
-        val frag:DailyQuestFragment = lf?.get(0) as DailyQuestFragment
+        val frag: DailyQuestFragment = lf?.get(0) as DailyQuestFragment
         frag.refreshDailyQuestList()
     }
 
