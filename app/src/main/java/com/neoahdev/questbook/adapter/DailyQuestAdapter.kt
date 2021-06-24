@@ -1,5 +1,7 @@
 package com.neoahdev.questbook.adapter
 
+import android.transition.AutoTransition
+import android.transition.TransitionManager
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -45,7 +47,7 @@ class DailyQuestAdapter(
         var txtQuestName: TextView = itemView.txtQuestName
 
         //expand/collapse
-        val details: View = itemView.clQuestMain
+        val details: View = itemView.clQuestDetails
         val txtDescription: TextView = itemView.txtDescription
         val txtEstimatedTime: TextView = itemView.txtEstimatedTime
 
@@ -64,6 +66,16 @@ class DailyQuestAdapter(
                     quest.estimatedCompletionTime.toString() + " Minutes"
                 quest.estimatedCompletionTime < 1 -> txtEstimatedTime.visibility =
                     View.GONE
+            }
+
+            //expand/collapse card
+            card.setOnClickListener{
+                TransitionManager.beginDelayedTransition(rv, AutoTransition().setDuration(200))
+                if (details.visibility == View.GONE) {
+                    details.visibility = View.VISIBLE
+                } else if (details.visibility == View.VISIBLE) {
+                    details.visibility = View.GONE
+                }
             }
         }
 

@@ -7,7 +7,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginHorizontal="16dp"
-    android:layout_marginVertical="8dp"
+    android:layout_marginTop="8dp"
+
     android:theme="@style/QuestItem"
     app:shapeAppearance="@style/QuestCard">
 
@@ -15,15 +16,13 @@
         android:id="@+id/cl"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="8dp">
+        android:padding="12dp"
+        >
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/clQuestMain"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -44,7 +43,7 @@
 
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:visibility="visible"
+            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/clQuestMain"
             app:layout_constraintStart_toStartOf="@+id/clQuestMain"

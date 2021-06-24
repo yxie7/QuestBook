@@ -8,6 +8,7 @@
     android:layout_height="@dimen/nav_header_height"
     android:background="@drawable/menu_drawer_header_gradient"
     android:gravity="bottom"
+    android:theme="@style/QuestBookPrimaryText"
     >
 
     <ImageView
