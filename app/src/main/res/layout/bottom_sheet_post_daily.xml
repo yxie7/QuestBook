@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <LinearLayout
         android:id="@+id/header"
@@ -34,10 +34,10 @@
         android:ems="10"
         android:hint="Quest Name"
         android:imeOptions="actionDone"
-        android:textCursorDrawable="@drawable/royal_red_cursor"
         android:inputType="text"
         android:singleLine="true"
         android:textAlignment="center"
+        android:textCursorDrawable="@drawable/royal_red_cursor"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="@+id/inputQuestDescription"
         app:layout_constraintStart_toStartOf="@+id/inputQuestDescription"
@@ -53,12 +53,12 @@
         android:backgroundTint="@color/royal_red"
         android:ems="10"
         android:gravity="start|top"
-        android:textCursorDrawable="@drawable/royal_red_cursor"
-
         android:hint="Description (Optional)"
+
         android:imeOptions="actionDone"
         android:inputType="text"
         android:singleLine="true"
+        android:textCursorDrawable="@drawable/royal_red_cursor"
 
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -77,9 +77,9 @@
         android:hint="0"
         android:inputType="number"
         android:maxLines="1"
-        android:textCursorDrawable="@drawable/royal_red_cursor"
-
         android:singleLine="true"
+
+        android:textCursorDrawable="@drawable/royal_red_cursor"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="@+id/txtEstimatedTime"
         app:layout_constraintEnd_toEndOf="@+id/inputQuestDescription"
@@ -100,7 +100,7 @@
         app:layout_constraintTop_toBottomOf="@+id/inputQuestDescription" />
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-        android:id="@+id/floatingActionButton"
+        android:id="@+id/fabPostDaily"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"

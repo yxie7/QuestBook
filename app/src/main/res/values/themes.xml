@@ -19,12 +19,13 @@
         <item name="actionMenuTextColor">@color/page_lightest</item>
         <item name="drawerArrowStyle">@style/QuestBookDrawer</item>
 
-        <item name="android:textColor">@color/page_lightest</item>
+        <item name="android:textColorSecondary">@color/black</item>
     </style>
 
     <style name="Theme.QuestBook.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+        <item name="android:textColorSecondary">@color/black</item>
     </style>
 
     <style name="Theme.QuestBook.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
@@ -47,13 +48,22 @@
         <item name="color">@color/page_lightest</item>
     </style>
 
-    <style name="QuestBookTheme">
+    <style name="QuestBookPrimaryText">
         <item name="android:textColor">@color/page_lightest</item>
+    </style>
+
+    <style name="QuestBookSecondaryText">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="QuestBookTheme" parent="QuestBookPrimaryText">
         <item name="android:background">@color/royal_red</item>
     </style>
-    <style name="QuestPage">
-        <item name="android:textColor">@color/black</item>
+    <style name="QuestPage" parent="QuestBookSecondaryText">
         <item name="android:background">@color/page_dark</item>
+    </style>
+    <style name="QuestItem" parent="QuestBookSecondaryText">
+        <item name="android:background">@color/page_light</item>
     </style>
 
 </resources>

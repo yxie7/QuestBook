@@ -11,12 +11,12 @@
         tools:layout="@layout/fragment_item_list_dummy" />
     <fragment
         android:id="@+id/nav_daily"
-        android:name="com.neoahdev.questbook.ui.DailyFragment"
+        android:name="com.neoahdev.questbook.ui.DailyQuestFragment"
         android:label="Daily Quests"
-        tools:layout="@layout/fragment_daily"/>
+        tools:layout="@layout/fragment_daily_list"/>
     <fragment
         android:id="@+id/nav_weekly"
         android:name="com.neoahdev.questbook.ui.WeeklyFragment"
         android:label="Weekly Quests"
-        tools:layout="@layout/fragment_daily" />
+        tools:layout="@layout/fragment_weekly" />
 </navigation>

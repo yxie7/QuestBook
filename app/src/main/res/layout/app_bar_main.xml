@@ -49,7 +49,7 @@
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
-
+<!-- nsv
     <androidx.core.widget.NestedScrollView
         android:id="@+id/nsv"
         android:layout_width="match_parent"
@@ -57,12 +57,18 @@
 
         android:fillViewport="true"
         android:padding="0dp"
+
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
         <include
             android:id="@+id/fragment_container"
             layout="@layout/content_main" />
     </androidx.core.widget.NestedScrollView>
+    END nsv -->
+
+    <include
+        android:id="@+id/fragment_container"
+        layout="@layout/content_main" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/clFabM"

@@ -1,10 +1,13 @@
 package com.neoahdev.questbook.model
 
+import com.squareup.moshi.JsonClass
+
+@JsonClass(generateAdapter = true)
 class DailyQuest(
-    name: String,
-    description: String,
-    estimatedCompletionTime: Int = 0,
-    completed: Boolean = false
+    var name: String,
+    var description: String,
+    var estimatedCompletionTime: Int = 0,
+    var completed: Boolean = false
 ) : Quest(name, description, estimatedCompletionTime, completed) {
 
 }

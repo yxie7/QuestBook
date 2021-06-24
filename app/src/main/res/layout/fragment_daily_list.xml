@@ -2,11 +2,14 @@
 <androidx.recyclerview.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/dummylist"
-    android:name="com.neoahdev.questbook.ItemDummyFragment"
+    android:id="@+id/DailyQuestListFragment"
+    android:name="com.neoahdev.questbook.DailyQuestFragment"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:theme="@style/QuestPage"
+    android:layout_height="wrap_content"
     app:layoutManager="LinearLayoutManager"
-    tools:context=".ItemDummyFragment"
-    tools:listitem="@layout/fragment_item_dummy" />
+    tools:context=".ui.DailyQuestFragment"
+    tools:listitem="@layout/daily_quest_item"
+    android:paddingBottom="84dp"
+    >
+
+</androidx.recyclerview.widget.RecyclerView>
